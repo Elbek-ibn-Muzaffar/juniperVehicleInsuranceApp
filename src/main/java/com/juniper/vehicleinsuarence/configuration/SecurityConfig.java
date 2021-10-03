@@ -60,7 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .requestMatchers(CorsUtils:: isPreFlightRequest).permitAll()
                 .antMatchers("/test/auth/admin/**").hasRole("ADMIN")
                 .antMatchers("/test/auth/user/**").hasRole("USER")
-                .antMatchers("/v1/userResource/**").hasRole("ADMIN")
+                .antMatchers("/v1/userResource/**").permitAll()
                 .antMatchers("/test/auth/**").permitAll()
                 .antMatchers("/authenticate/generateToken").permitAll()
                 .antMatchers("/vehicle/**").hasRole("ADMIN")
