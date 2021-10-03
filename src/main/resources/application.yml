@@ -1,0 +1,16 @@
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://ec2-34-197-135-44.compute-1.amazonaws.com:5432/dain4331a78egv
+    username: byadgvysllgiqb
+    password: d4f605e7ebdd5acaa6355ddac5e2ad2b802a9b717899bfd31746de9391bc957b
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL92Dialect
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8081
