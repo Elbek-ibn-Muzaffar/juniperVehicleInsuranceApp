@@ -28,11 +28,12 @@ public class VehicleService {
     //save vehicle
     public String saveVehicle(VehicleReqDto vehicleReqDto)
     {
-        Users users=userRepository.findByPasport(vehicleReqDto.getPasport());
         Vehicle vehicle=new Vehicle();
 
-        if (!vehicleRepository.existsByVnumber(vehicleReqDto.getVnumber()))
+        if (!vehicleRepository.existsByVnumber(vehicleReqDto.getVnumber())&&userRepository.existsByPasport(vehicleReqDto.getPasport()))
         {
+            Users users=userRepository.findByPasport(vehicleReqDto.getPasport());
+
             vehicle.setCategory(vehicleReqDto.getCategory());
             vehicle.setColor(vehicleReqDto.getColor());
             vehicle.setManufactory(vehicleReqDto.getManufactory());
@@ -43,7 +44,7 @@ public class VehicleService {
             return "saqlandi";
         }
 
-        return "saqlanmadi bu avtomashina mavjud";
+        return "saqlanmadi bu avtomashina mavjud yoki berilgan user mavjud emas";
     }
 
     //get One Vehicle
