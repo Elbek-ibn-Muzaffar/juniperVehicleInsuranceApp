@@ -1,5 +1,6 @@
 package com.juniper.vehicleinsuarence.domains;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ public class Insurance {
     private String inNumber;
 
     @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date date;
 
     @ManyToOne(cascade = CascadeType.MERGE)
