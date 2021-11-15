@@ -12,7 +12,7 @@ public class TestController {
     @GetMapping("/visitors")
     public String getResponce()
     {
-        return "hello World";
+        return "Shunaqa gaplar ekandaaa endi nimayam derdik. Hammaga baxt omad!!!";
     }
 
     @GetMapping("/admin")
