@@ -58,4 +58,11 @@ public class InsuranceController {
     {
         return ResponseEntity.ok(insuranceService.deleteInsurance(number));
     }
+
+    @ApiOperation("generating insurance number")
+    @GetMapping("/generateNumvber")
+    public ResponseEntity genrateNumber()
+    {
+        return ResponseEntity.ok(insuranceService.generateInsuranceNumber());
+    }
 }

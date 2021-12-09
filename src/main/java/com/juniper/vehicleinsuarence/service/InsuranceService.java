@@ -29,6 +29,15 @@ public class InsuranceService {
 
     ModelMapper modelMapper=new ModelMapper();
 
+    public String generateInsuranceNumber()
+    {
+        List<String> numbers=insuranseRepository.findAllInNumber();
+        String number=numbers.get(numbers.size()-1);
+        String subNumber=number.substring(1);
+        int getNum=Integer.parseInt(subNumber)+1;
+        String nomer =Integer.toString(getNum);
+        return "b"+nomer;
+    }
 
     //save insurance function
     public String saveIncurance(InsuranceReqDto insuranceReqDto)

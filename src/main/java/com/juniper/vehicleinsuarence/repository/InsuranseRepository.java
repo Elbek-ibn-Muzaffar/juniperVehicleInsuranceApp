@@ -39,4 +39,7 @@ public interface InsuranseRepository extends JpaRepository<Insurance, UUID> {
 
     Insurance findByInNumber(String number);
 
+    @Query("select i.inNumber from Insurance i")
+    List<String> findAllInNumber();
+
 }

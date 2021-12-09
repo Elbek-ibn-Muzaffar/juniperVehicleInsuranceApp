@@ -1,6 +1,5 @@
 package com.juniper.vehicleinsuarence.controller;
 
-import org.apache.catalina.webresources.StandardRoot;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
