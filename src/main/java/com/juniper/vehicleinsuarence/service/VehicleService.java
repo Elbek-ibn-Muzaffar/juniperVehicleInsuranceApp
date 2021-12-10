@@ -67,8 +67,8 @@ public class VehicleService {
         for (int i=0;i<vehicles.size();i++)
         {
             vehicleResDtos.add(modelMapper.map(vehicles.get(i),VehicleResDto.class));
-            vehicleResDtos.get(i).setOwnerName(users.get(i).getName());
-            vehicleResDtos.get(i).setOwnerLastName(users.get(i).getLastName());
+            vehicleResDtos.get(i).setOwnerName(vehicles.get(i).getUsers().getName());
+            vehicleResDtos.get(i).setOwnerLastName(vehicles.get(i).getUsers().getLastName());
         }
 
         return vehicleResDtos;
